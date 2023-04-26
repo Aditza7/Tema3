@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <label for="n1">Introduceti numar 1:</label>
+  <input type="number" id="n1"><br>
+
+  <label for="n2">Introduceti numar 2:</label>
+  <input type="number" id="n2"><br>
+
+  <button onclick="multiply()">Inmultire</button>
+  <button onclick="divide()">Impartire</button><br>
+
+  <label for="result">Rezultat:</label>
+  <input type="number" id="result" readonly>
+</body>
+
+<script>
+  function multiply() {
+    const num1 = parseFloat(document.getElementById("n1").value);
+    const num2 = parseFloat(document.getElementById("n2").value);
+    const product = num1 * num2;
+
+    document.getElementById("result").value = product;
+  }
+
+  function divide() {
+    const num1 = parseFloat(document.getElementById("n1").value);
+    const num2 = parseFloat(document.getElementById("n2").value);
+
+    const quotient = num1 / num2;
+
+    document.getElementById("result").value = quotient;
+    } 
+</script>
