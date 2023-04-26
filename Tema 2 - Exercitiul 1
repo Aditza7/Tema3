@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cronometru cu numaratoare inversa</title>	
+  </head>
+  <body>
+    <h1>Cronometru cu numaratoare inversa</h1>
+    <div id="timer">
+      <span id="minute">00</span>:<span id="secunde">00</span>
+    </div>
+    <button onclick="startTimer()">Start</button> 
+
+<script>
+let intervalId;
+let minute =1;
+let secunde = 05;
+
+function startTimer() {
+  intervalId = setInterval(countdown, 1000);
+}
+
+function countdown() {
+  secunde--;
+  if (secunde < 0) {
+    secunde = 59;
+    minute--;
+  }
+  if (minute < 0) {
+    stopTimer();
+    return;
+  }
+  document.getElementById("minute").textContent = padZero(minute);
+  document.getElementById("secunde").textContent = padZero(secunde);
+}
+
+function padZero(number) {
+  if (number < 10) {
+    return "0" + number;
+  }
+  return number;
+}
+
+</script>
+</body>
+</html>
