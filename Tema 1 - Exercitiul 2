@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <label for="input">Introduceți textul:</label>
+    <textarea id="input"></textarea>
+    <button id="butonMaresteLitera">Mareste litera</button>
+    <div id="output"></div>
+  </body>
+</html>
+<script>
+const intrareText = document.getElementById('input');
+const butonMaresteLitera = document.getElementById('butonMaresteLitera');
+const iesireText = document.getElementById('output');
+
+const maresteLitera = () => {
+  const text = intrareText.value;
+  const textCuLitereMari = text.replace(/\b\w/g, (match) => match.toUpperCase());
+  iesireText.innerText = textCuLitereMari;
+}
+
+butonMaresteLitera.addEventListener('click', maresteLitera);
+</script>
