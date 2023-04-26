@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intersectia elementelor a doua multimi</title>
+  </head>
+  <body>
+    <h1>Intersectia a doua multimi</h1>
+    <label for="set1">Scrieti elementele cu virgula intre ele (multimea 1):</label>
+    <input type="text" id="set1">
+    <br>
+    <label for="set2">Scrieti elementele cu virgula intre ele (multimea 2):</label>
+    <input type="text" id="set2">
+    <br>
+    <button onclick="intersect()">Intersectie</button>
+    <br>
+    <label for="result">Elementele comune din cele doua multimi:</label>
+    <input type="text" id="result" disabled>
+
+    <script>
+      function intersect() {  
+
+        var set1 = document.getElementById("set1").value.split(",");
+        var set2 = document.getElementById("set2").value.split(",");       
+
+        var intersection = set1.filter(function(value) {
+          return set2.includes(value);
+        });    
+
+        document.getElementById("result").value = intersection.join(", ");
+      }
+    </script>
+  </body>
+</html>
